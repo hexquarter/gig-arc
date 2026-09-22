@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Arc Dark — Premium SaaS palette ─────────────────────────────────────── */
+:root {
+  --bg: #080e1a;
+  --bg-gradient: linear-gradient(160deg, #080e1a 0%, #0c1525 55%, #0d1c30 100%);
+
+  /* Surfaces */
+  --surface:        rgba(255, 255, 255, 0.055);
+  --surface-strong: rgba(255, 255, 255, 0.09);
+  --surface-muted:  rgba(255, 255, 255, 0.035);
+  --surface-hover:  rgba(255, 255, 255, 0.075);
+
+  /* Text */
+  --ink:    #f0f4ff;
+  --ink-2:  #bfccde;
+  --muted:  #8fa3bc;
+  --subtle: #5b7592;
+
+  /* Borders */
+  --border:        rgba(139, 168, 210, 0.13);
+  --border-strong: rgba(139, 168, 210, 0.28);
+  --border-accent: rgba(99, 179, 237, 0.40);
+
+  /* Brand accent — crisp sky blue */
+  --accent:       #63b3ed;
+  --accent-hover: #90cdf4;
+  --accent-dim:   rgba(99, 179, 237, 0.14);
+  --accent-glow:  rgba(99, 179, 237, 0.22);
+
+  /* Semantic */
+  --success:      #48bb78;
+  --success-dim:  rgba(72, 187, 120, 0.14);
+  --warning:      #f6ad55;
+  --warning-dim:  rgba(246, 173, 85, 0.14);
+  --danger:       #fc8181;
+  --danger-dim:   rgba(252, 129, 129, 0.14);
+
+  /* Spectral strip for sheet tops */
+  --spectral: linear-gradient(90deg, #63b3ed 0%, #9f7aea 50%, #f687b3 100%);
+
+  /* Focus ring */
+  --focus: rgba(99, 179, 237, 0.50);
+}
+
+/* ── Base reset ──────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100dvh;
+  background: var(--bg-gradient);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── Font helpers ────────────────────────────────────────────────────────── */
+.display { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.03em; }
+.mono    { font-family: 'JetBrains Mono', Menlo, monospace; letter-spacing: -0.01em; }
+
+/* ── Scrollbar — minimal dark ────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 99px; }
+
+/* ── Focus visible ───────────────────────────────────────────────────────── */
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+:focus:not(:focus-visible) { outline: none; }
+
+/* ── Reduced motion ──────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
